@@ -299,7 +299,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet2</DataSetName>
-            <Top>6.81925cm</Top>
+            <Top>5.15911cm</Top>
             <Left>0.56278cm</Left>
             <Height>2.09902cm</Height>
             <Width>19.12846cm</Width>
@@ -327,7 +327,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox7</rd:DefaultName>
-            <Top>2.4176cm</Top>
+            <Top>2.88475cm</Top>
             <Left>0.56279cm</Left>
             <Height>0.78521cm</Height>
             <Width>8.05575cm</Width>
@@ -360,10 +360,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>branch</rd:DefaultName>
-            <Top>4.37446cm</Top>
-            <Left>2.90147cm</Left>
+            <Top>2.27649cm</Top>
+            <Left>0.56279cm</Left>
             <Height>0.60826cm</Height>
-            <Width>9.34187cm</Width>
+            <Width>8.57458cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -480,9 +480,9 @@
           </Textbox>
           <Line Name="Line3">
             <Top>10.22577cm</Top>
-            <Left>0.83209cm</Left>
+            <Left>0.56278cm</Left>
             <Height>0cm</Height>
-            <Width>7.08702cm</Width>
+            <Width>3.53179cm</Width>
             <ZIndex>6</ZIndex>
             <Style>
               <Border>
@@ -497,7 +497,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Customer Signature Over Printed Name</Value>
+                    <Value>Name &amp; Signature</Value>
                     <Style>
                       <FontFamily>Arial Rounded MT Bold</FontFamily>
                     </Style>
@@ -508,9 +508,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox7</rd:DefaultName>
             <Top>10.40216cm</Top>
-            <Left>0.83209cm</Left>
+            <Left>0.56278cm</Left>
             <Height>0.62646cm</Height>
-            <Width>7.08702cm</Width>
+            <Width>3.53179cm</Width>
             <ZIndex>7</ZIndex>
             <Style>
               <Border>
@@ -539,9 +539,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>remarks</rd:DefaultName>
-            <Top>5.09681cm</Top>
-            <Left>2.27375cm</Left>
-            <Height>0.5377cm</Height>
+            <Top>4.3265cm</Top>
+            <Left>3.24501cm</Left>
+            <Height>0.59392cm</Height>
             <Width>9.96959cm</Width>
             <ZIndex>8</ZIndex>
             <Style>
@@ -574,7 +574,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Delivered to:</Value>
+                    <Value>Received From:</Value>
                     <Style>
                       <FontFamily>Arial Rounded MT Bold</FontFamily>
                       <FontSize>9pt</FontSize>
@@ -588,8 +588,120 @@
             <Top>4.418cm</Top>
             <Left>0.56279cm</Left>
             <Height>0.5377cm</Height>
-            <Width>2.52389cm</Width>
+            <Width>2.71613cm</Width>
             <ZIndex>10</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Line Name="Line5">
+            <Top>4.85344cm</Top>
+            <Left>3.18579cm</Left>
+            <Height>0cm</Height>
+            <Width>6.29114cm</Width>
+            <ZIndex>11</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Line>
+          <Line Name="Line8">
+            <Top>4.92042cm</Top>
+            <Left>14.37232cm</Left>
+            <Height>0cm</Height>
+            <Width>5.31893cm</Width>
+            <ZIndex>12</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Line>
+          <Line Name="Line4">
+            <Top>10.22577cm</Top>
+            <Left>9.09623cm</Left>
+            <Height>0cm</Height>
+            <Width>3.53179cm</Width>
+            <ZIndex>13</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Line>
+          <Textbox Name="Textbox15">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Name &amp; Signature</Value>
+                    <Style>
+                      <FontFamily>Arial Rounded MT Bold</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox7</rd:DefaultName>
+            <Top>10.40216cm</Top>
+            <Left>9.09623cm</Left>
+            <Height>0.62646cm</Height>
+            <Width>3.53179cm</Width>
+            <ZIndex>14</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Line Name="Line6">
+            <Top>10.22577cm</Top>
+            <Left>16.15946cm</Left>
+            <Height>0cm</Height>
+            <Width>3.53179cm</Width>
+            <ZIndex>15</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Line>
+          <Textbox Name="Textbox16">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Name &amp; Signature</Value>
+                    <Style>
+                      <FontFamily>Arial Rounded MT Bold</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox7</rd:DefaultName>
+            <Top>10.40216cm</Top>
+            <Left>16.15946cm</Left>
+            <Height>0.62646cm</Height>
+            <Width>3.53179cm</Width>
+            <ZIndex>16</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -607,7 +719,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>TIN:</Value>
+                    <Value>PREPARED BY:</Value>
                     <Style>
                       <FontFamily>Arial Rounded MT Bold</FontFamily>
                       <FontSize>9pt</FontSize>
@@ -618,11 +730,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox7</rd:DefaultName>
-            <Top>5.12383cm</Top>
-            <Left>13.10271cm</Left>
+            <Top>8.50481cm</Top>
+            <Left>0.56279cm</Left>
             <Height>0.5377cm</Height>
-            <Width>1.26299cm</Width>
-            <ZIndex>11</ZIndex>
+            <Width>2.71613cm</Width>
+            <ZIndex>17</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -633,50 +745,14 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Line Name="Line5">
-            <Top>4.92042cm</Top>
-            <Left>2.6449cm</Left>
-            <Height>0cm</Height>
-            <Width>6.29114cm</Width>
-            <ZIndex>12</ZIndex>
-            <Style>
-              <Border>
-                <Style>Solid</Style>
-              </Border>
-            </Style>
-          </Line>
-          <Line Name="Line6">
-            <Top>5.62625cm</Top>
-            <Left>13.88469cm</Left>
-            <Height>0cm</Height>
-            <Width>5.80655cm</Width>
-            <ZIndex>13</ZIndex>
-            <Style>
-              <Border>
-                <Style>Solid</Style>
-              </Border>
-            </Style>
-          </Line>
-          <Line Name="Line8">
-            <Top>4.92042cm</Top>
-            <Left>14.37232cm</Left>
-            <Height>0cm</Height>
-            <Width>5.31893cm</Width>
-            <ZIndex>14</ZIndex>
-            <Style>
-              <Border>
-                <Style>Solid</Style>
-              </Border>
-            </Style>
-          </Line>
-          <Textbox Name="Textbox12">
+          <Textbox Name="Textbox19">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
             <Paragraphs>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Branch:</Value>
+                    <Value>RECEIVED BY:</Value>
                     <Style>
                       <FontFamily>Arial Rounded MT Bold</FontFamily>
                       <FontSize>9pt</FontSize>
@@ -687,11 +763,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox7</rd:DefaultName>
-            <Top>5.09681cm</Top>
-            <Left>0.56278cm</Left>
+            <Top>8.50481cm</Top>
+            <Left>9.09623cm</Left>
             <Height>0.5377cm</Height>
-            <Width>1.71097cm</Width>
-            <ZIndex>15</ZIndex>
+            <Width>2.71613cm</Width>
+            <ZIndex>18</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -702,18 +778,39 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Line Name="Line10">
-            <Top>5.63451cm</Top>
-            <Left>1.96527cm</Left>
-            <Height>0cm</Height>
-            <Width>6.97077cm</Width>
-            <ZIndex>16</ZIndex>
+          <Textbox Name="Textbox20">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>CHECKED BY:</Value>
+                    <Style>
+                      <FontFamily>Arial Rounded MT Bold</FontFamily>
+                      <FontSize>9pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox7</rd:DefaultName>
+            <Top>8.50481cm</Top>
+            <Left>16.15946cm</Left>
+            <Height>0.5377cm</Height>
+            <Width>2.71613cm</Width>
+            <ZIndex>19</ZIndex>
             <Style>
               <Border>
-                <Style>Solid</Style>
+                <Style>None</Style>
               </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
             </Style>
-          </Line>
+          </Textbox>
         </ReportItems>
         <Height>5.12833in</Height>
         <Style>
@@ -752,6 +849,8 @@
     </ReportParameter>
     <ReportParameter Name="remarks">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>

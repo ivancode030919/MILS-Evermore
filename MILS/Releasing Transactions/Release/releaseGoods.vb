@@ -427,6 +427,7 @@
         ElseIf cbxReceiver.Text = "COMPANY EXPENSE" Then
             tbxDocType.Text = "Company Expense"
             Label9.Text = "Remarks :"
+            ComboBox1.DropDownStyle = ComboBoxStyle.Simple
             q.FetchSeriesinReleasingCE()
             tbxDocNum.Text = series1
             tbxDocNum.Enabled = False
