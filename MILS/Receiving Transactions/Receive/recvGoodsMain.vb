@@ -442,4 +442,7 @@
     Private Sub tbxDocNum_TextChanged(sender As Object, e As EventArgs) Handles tbxDocNum.TextChanged
 
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+    End Sub
 End Class
