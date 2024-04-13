@@ -159,7 +159,7 @@
     Private Sub tbxDocType_Leave(sender As Object, e As EventArgs) Handles tbxDocType.Leave
         If Not String.IsNullOrWhiteSpace(tbxDocType.Text) Then
             'q.fetchIdDocType(tbxDocType.Text)
-
+            q.fetchIdDocTypeRels(tbxDocType.Text)
             'MsgBox(docTypeId)
         Else
 
@@ -437,7 +437,7 @@
             tbxDocNum.Enabled = True
             tbxDocNum.Text = ""
         End If
-        q.fetchIdDocTypeRels(tbxDocType.Text)
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)

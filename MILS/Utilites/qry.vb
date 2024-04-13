@@ -17,7 +17,7 @@ Public Class qry
     Private f As New functions
 
     'Public path As String = "\\172.16.7.7\MILS_v3\EVERMORE\Live\Evermore\MILS\"
-    Public path As String = "C:\Users\HSDP_SYS_DEV\Desktop\WORK\Evermore\MILS-Evermore\MILS\"
+    Public path As String = "\\172.16.10.218\Users\HSDP_SYS_DEV\Desktop\WORK\Evermore\MILS-Evermore\MILS\"
     Public Sub reportlog()
         Dim RPuser1 As String = "HSDP_DEPOT"
         Dim RPpass2 As String = "123456$hsdp"
@@ -301,8 +301,7 @@ Public Class qry
     End Sub 'Update area
 
     Public Sub suggestDocType(ByVal d As AutoCompleteStringCollection)
-        SQL.ExecQueryDT("SELECT remarks FROM tblDocumentTypes
-                        WHERE isIn = 1 and isPrimary = 1;")
+        SQL.ExecQueryDT("SELECT remarks FROM tblDocumentTypes WHERE isIn = 1 and isPrimary = 1;")
         If SQL.HasException(True) Then Exit Sub
         If SQL.RecordCountDT > 0 Then
             For Each r As DataRow In SQL.DBDT.Rows
@@ -313,28 +312,31 @@ Public Class qry
 
     Public Sub fetchIdDocType(t As String)
         SQL.AddParam("@t", t)
-        SQL.ExecQueryDT("SELECT id FROM tblDocumentTypes
-            WHERE isIn = 1 AND isPrimary = 1 AND remarks = @t;")
+        SQL.ExecQueryDT("SELECT id FROM tblDocumentTypes WHERE isIn = 1 AND isPrimary = 1 AND remarks = @t;")
         If SQL.HasException(True) Then Exit Sub
         With recvGoodsMain
             If SQL.RecordCountDT <> 0 Then
                 For Each r As DataRow In SQL.DBDT.Rows
+                    .docTypeId = ""
                     .docTypeId = r(0)
                 Next
-
-
             Else
-
+                .docTypeId = ""
+                .tbxDocType.Text = ""
             End If
         End With
         With recvListingDetails
             If SQL.RecordCountDT <> 0 Then
                 For Each r As DataRow In SQL.DBDT.Rows
+                    .docTypeId = ""
                     .docTypeId = r(0)
                 Next
-
+            Else
+                .docTypeId = ""
+                .tbxDocType.Text = ""
             End If
         End With
+
     End Sub
 
     'Get The Reference Document Code
@@ -2022,7 +2024,7 @@ Public Class qry
                 Next
             Else
                 .docTypeId = ""
-
+                .tbxDocType.Text = ""
             End If
         End With
     End Sub
