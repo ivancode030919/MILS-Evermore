@@ -819,7 +819,7 @@
           </Border>
         </Style>
       </Body>
-      <Width>8.421in</Width>
+      <Width>7.95225in</Width>
       <Page>
         <PageHeight>5in</PageHeight>
         <PageWidth>8in</PageWidth>
@@ -845,6 +845,8 @@
     </ReportParameter>
     <ReportParameter Name="series">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="remarks">

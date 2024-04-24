@@ -53,6 +53,7 @@ Public Class StatusReport
         CrystalReportViewer1.Zoom(80)
     End Sub
 
+
     Private Sub BtnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
         Validatedatas()
     End Sub

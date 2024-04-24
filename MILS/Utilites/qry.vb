@@ -355,6 +355,16 @@ Public Class qry
 
         End With
 
+        With recvGoodsMain
+
+            If SQL.RecordCountDT <> 0 Then
+                For Each r As DataRow In SQL.DBDT.Rows
+                    .docCode = r(0)
+                Next
+            End If
+
+        End With
+
     End Sub
 
     Public Sub suggestDocTypeRecvListing(ByVal d As AutoCompleteStringCollection)
@@ -1019,6 +1029,7 @@ Public Class qry
             .dgvRecv.Enabled = False
             .tbxEntry.Text = transId
             .btnAdd.Text = "Add New Entry"
+            .Button1.Visible = True
             .btnAdd.Select()
             .lblErr.Visible = True
             .lblErr.ForeColor = Color.Green
@@ -2416,6 +2427,7 @@ Public Class qry
             .dgvRels.AllowUserToAddRows = False
             .dgvRels.Enabled = False
             .tbxEntry.Text = transId
+            .Button1.Visible = True
             .btnAdd.Text = "Add New Entry"
             .btnAdd.Select()
         End With
