@@ -125,7 +125,7 @@
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) 
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 

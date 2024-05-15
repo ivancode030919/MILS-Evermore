@@ -1,12 +1,4 @@
-﻿Imports Microsoft.Office.Core
-Imports Excel = Microsoft.Office.Interop.Excel
-Imports ExcelAutoFormat = Microsoft.Office.Interop.Excel.XlRangeAutoFormat
-Imports Microsoft.Office.Interop
-Imports System.Xml.XPath
-Imports System.Xml
-Imports System.ComponentModel
-
-Public Class releaseRegister
+﻿Public Class releaseRegister
     Public docTypeId As String
     Private q As New qry
     Private isAll As Boolean = True

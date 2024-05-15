@@ -221,7 +221,7 @@
             End If
 
         ElseIf btnSave.Text = "Add New Entry" Then
-                With Me
+            With Me
                 .dgvInventory.AllowUserToAddRows = True
                 .dgvInventory.Enabled = True
                 .table.Clear()

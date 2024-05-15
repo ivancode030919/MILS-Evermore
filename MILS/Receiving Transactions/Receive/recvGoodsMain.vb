@@ -406,7 +406,6 @@ Public Class recvGoodsMain
         doctypeselect()
     End Sub
 
-
     Private Sub doctypeselect()
         If tbxDocType.Text = "Receiving Report" Then
 

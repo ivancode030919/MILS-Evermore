@@ -117,7 +117,7 @@
 
     End Sub
 
-    Private Sub btnOk_Click(sender As Object, e As EventArgs) 
+    Private Sub btnOk_Click(sender As Object, e As EventArgs)
         fetchIDandDes()
     End Sub
 

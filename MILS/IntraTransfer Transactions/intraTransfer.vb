@@ -100,7 +100,7 @@
     Private Sub dgvTransferGoods_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTransferGoods.CellDoubleClick
 
         Dim rows As DataGridViewRow = dgvTransferGoods.Rows(e.RowIndex)
-            Dim row As Integer = dgvTransferGoods.CurrentCell.RowIndex
+        Dim row As Integer = dgvTransferGoods.CurrentCell.RowIndex
         'Dim locID As String = rows.Cells(2).Value.ToString
 
         If e.ColumnIndex = 5 Then
@@ -118,22 +118,22 @@
             Dim locID As String = rows.Cells(2).Value.ToString
 
             If String.IsNullOrWhiteSpace(rows.Cells(0).Value.ToString) Then
-                    MessageBox.Show("Select valid product first.", "Error",
-                                               MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    Exit Sub
-                Else
-                    With intraTransferLoadLocationTo
-                        .targetRow = row
-                        .locId = locID
-                        .loadLV()
-                        .tbxFilter.Text = ""
-                        .tbxFilter.Select()
-                        .Show()
+                MessageBox.Show("Select valid product first.", "Error",
+                                           MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Exit Sub
+            Else
+                With intraTransferLoadLocationTo
+                    .targetRow = row
+                    .locId = locID
+                    .loadLV()
+                    .tbxFilter.Text = ""
+                    .tbxFilter.Select()
+                    .Show()
 
-                        Me.Enabled = False
-                    End With
-                End If
+                    Me.Enabled = False
+                End With
             End If
+        End If
 
 
     End Sub

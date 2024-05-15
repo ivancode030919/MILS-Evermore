@@ -163,6 +163,7 @@ Public Class releaseGoods
         If Not String.IsNullOrWhiteSpace(tbxDocType.Text) Then
             'q.fetchIdDocType(tbxDocType.Text)
             q.fetchIdDocTypeRels(tbxDocType.Text)
+            DocSelection()
             'MsgBox(docTypeId)
         Else
 

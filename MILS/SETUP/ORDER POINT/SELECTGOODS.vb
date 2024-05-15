@@ -49,9 +49,9 @@
 
 
         If String.IsNullOrWhiteSpace(pdno) And String.IsNullOrWhiteSpace(prodDes) Then
-                'lblError.Text = "Select valid data!"
-                'lblError.Visible = True
-            Else
+            'lblError.Text = "Select valid data!"
+            'lblError.Visible = True
+        Else
             Dim y As Integer = CInt(listb.SelectedItems(0).Index)
 
             pdno = listb.Items(y).SubItems(1).Text

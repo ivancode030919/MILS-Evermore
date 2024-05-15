@@ -1,6 +1,4 @@
-﻿Imports System.Runtime.Remoting.Contexts
-Imports System.Security
-Imports System.Net
+﻿Imports System.Net
 Public Class Home_Page
     Public userId As String
     Public roleId As String
@@ -194,13 +192,13 @@ Public Class Home_Page
     Private Sub Home_Page_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
 
         If (MessageBox.Show("Are you sure you want to log out?", "Info", MessageBoxButtons.YesNo) = System.Windows.Forms.DialogResult.No) Then
-                e.Cancel = True
-            Else
-                e.Cancel = False
-                login_page.tbxUser.Text = ""
-                login_page.Show()
-                login_page.Focus()
-            End If
+            e.Cancel = True
+        Else
+            e.Cancel = False
+            login_page.tbxUser.Text = ""
+            login_page.Show()
+            login_page.Focus()
+        End If
 
     End Sub
 
@@ -406,7 +404,7 @@ Public Class Home_Page
 
     End Sub
 
-    Private Sub ItemListSummaryToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+    Private Sub ItemListSummaryToolStripMenuItem_Click(sender As Object, e As EventArgs)
         closeforms()
         itemListSmmary.MdiParent = Me
         itemListSmmary.Show()

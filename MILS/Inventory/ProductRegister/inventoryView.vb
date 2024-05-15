@@ -1,10 +1,4 @@
-﻿Imports Microsoft.Office.Core
-Imports Excel = Microsoft.Office.Interop.Excel
-Imports ExcelAutoFormat = Microsoft.Office.Interop.Excel.XlRangeAutoFormat
-Imports Microsoft.Office.Interop
-Imports System.Xml.XPath
-Imports System.Xml
-Public Class inventoryView
+﻿Public Class inventoryView
     Private q As New qry
 
     Private Sub inventoryView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -109,7 +103,7 @@ Public Class inventoryView
                 .tbxBatch.Select()
                 .Show()
             End With
-         
+
         Else
 
         End If

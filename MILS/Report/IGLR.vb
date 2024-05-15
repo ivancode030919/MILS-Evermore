@@ -1,10 +1,4 @@
-﻿Imports System.Data.SqlClient
-Imports System.Data
-Imports System.Data.SqlTypes
-Imports System.Data.OleDb
-Imports System
-Imports System.Windows.Forms
-Imports CrystalDecisions.CrystalReports.Engine
+﻿Imports CrystalDecisions.CrystalReports.Engine
 Imports CrystalDecisions.Shared
 Public Class IGLR
     Private q As New qry

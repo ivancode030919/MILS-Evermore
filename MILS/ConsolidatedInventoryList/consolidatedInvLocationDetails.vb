@@ -1,13 +1,4 @@
-﻿Imports Microsoft.Office.Core
-Imports Excel = Microsoft.Office.Interop.Excel
-Imports ExcelAutoFormat = Microsoft.Office.Interop.Excel.XlRangeAutoFormat
-Imports Microsoft.Office.Interop
-Imports System.Xml.XPath
-Imports System.Xml
-Imports System.ComponentModel
-Imports System.Threading
-
-'MAIN FORM VIEW
+﻿'MAIN FORM VIEW
 Public Class consolidatedInvLocationDetails
     Private q As New qry
 

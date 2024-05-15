@@ -1,17 +1,4 @@
-﻿Imports System.Text.RegularExpressions
-Imports System.IO
-Imports System.Security.Cryptography
-Imports System.Text
-Imports System.Drawing.Image
-Imports System.Data.SqlClient
-Imports System.Data
-Imports System.Data.SqlTypes
-Imports System.Data.OleDb
-Imports System
-Imports System.Windows.Forms
-
-
-Public Class UpdateDes
+﻿Public Class UpdateDes
 
     Private q As New qry
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

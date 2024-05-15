@@ -1,8 +1,5 @@
-﻿Imports System.Text.RegularExpressions
-Imports System.IO
-Imports System.Security.Cryptography
+﻿Imports System.Security.Cryptography
 Imports System.Text
-Imports System
 Imports System.Xml
 
 Public Class functions

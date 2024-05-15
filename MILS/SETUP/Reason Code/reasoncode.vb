@@ -1,12 +1,4 @@
-﻿
-Imports System.Data.SqlClient
-Imports System.Data
-Imports System.Data.SqlTypes
-Imports System.Data.OleDb
-Imports System
-Imports System.Windows.Forms
-
-Public Class reasoncode
+﻿Public Class reasoncode
 
     Private q As New qry
     Private Sub Reasoncode_Load(sender As Object, e As EventArgs) Handles MyBase.Load

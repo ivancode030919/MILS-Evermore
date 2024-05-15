@@ -1,9 +1,4 @@
-﻿Imports Microsoft.Office.Core
-Imports Excel = Microsoft.Office.Interop.Excel
-Imports ExcelAutoFormat = Microsoft.Office.Interop.Excel.XlRangeAutoFormat
-Imports Microsoft.Office.Interop
-Imports System.Xml.XPath
-Imports System.Xml
+﻿Imports Excel = Microsoft.Office.Interop.Excel
 
 Public Class intraTransferRegister
     Private q As New qry

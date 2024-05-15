@@ -1,15 +1,4 @@
-﻿Imports System.Text.RegularExpressions
-Imports System.IO
-Imports System.Security.Cryptography
-Imports System.Text
-Imports System.Drawing.Image
-Imports System.Data.SqlClient
-Imports System.Data
-Imports System.Data.SqlTypes
-Imports System.Data.OleDb
-Imports System
-Imports System.Windows.Forms
-Imports CrystalDecisions.CrystalReports.Engine
+﻿Imports CrystalDecisions.CrystalReports.Engine
 Imports CrystalDecisions.Shared
 
 Public Class qry
@@ -17,7 +6,7 @@ Public Class qry
     Private f As New functions
 
     'Public path As String = "\\172.16.7.7\MILS_v3\EVERMORE\Live\Evermore\MILS\"
-    Public path As String = "\\172.16.10.218\Users\HSDP_SYS_DEV\Desktop\WORK\Evermore\MILS-Evermore\MILS\"
+    Public path As String = "C:\Mils_evermore\Evermore\Evermore-DVO\MILS\"
     Public Sub reportlog()
         Dim RPuser1 As String = "HSDP_DEPOT"
         Dim RPpass2 As String = "123456$hsdp"
@@ -1997,7 +1986,6 @@ Public Class qry
                 .closeThisForm()
             End With
         End If
-
     End Sub
 
     Public Sub suggestDocTypeRels(ByVal d As AutoCompleteStringCollection)
@@ -2034,8 +2022,8 @@ Public Class qry
                     .docTypeId = r(0)
                 Next
             Else
-                .docTypeId = ""
-                .tbxDocType.Text = ""
+                '.docTypeId = ""
+                '.tbxDocType.Text = ""
             End If
         End With
     End Sub
@@ -2291,7 +2279,7 @@ Public Class qry
             End If
 
         End If
-            Return bool
+        Return bool
     End Function
 
     Public Sub validateDocumentRelsTransaction(docType As String, doctypeid As String, docNo As String, area As String)
@@ -8024,7 +8012,11 @@ FROM tblProductsABHeaders T1
         End If
 
         ' Execute the SQL query to retrieve the top series from tblrecvseries
-        SQL.ExecQueryDT("Select TOP 1 series from tblRecvHeaders where  docType = 50014 order by id desc")
+        'For Davao
+        SQL.ExecQueryDT("Select TOP 1 series from tblRecvHeaders where  docType = 50016 order by id desc")
+
+        'For All
+        'SQL.ExecQueryDT("Select TOP 1 series from tblRecvHeaders where  docType = 50014 order by id desc")
 
         ' Check for any exceptions during the SQL query execution
         If SQL.HasException(True) Then Exit Sub
@@ -8146,8 +8138,11 @@ FROM tblProductsABHeaders T1
 
     'fetch series for Document Number in Releasing : Goods Receipt Form : For Company expense
     Public Sub FetchSeriesinReleasingCE()
+        'For Davao
+        SQL.ExecQueryDT("Select TOP 1 series from tblRelsHeader where docType = 52007 order by id desc")
 
-        SQL.ExecQueryDT("Select TOP 1 series from tblRelsHeader where docType = 50027 order by id desc")
+        'For All
+        'SQL.ExecQueryDT("Select TOP 1 series from tblRelsHeader where docType = 50027 order by id desc")
 
         ' Check for any exceptions during the SQL query execution
         If SQL.HasException(True) Then Exit Sub
@@ -8188,7 +8183,11 @@ FROM tblProductsABHeaders T1
     'fetch series for Document Number in Releasing : Purchase Return
     Public Sub FetchSeriesinReleasing1()
         ' Execute the SQL query to retrieve the top series from tblrecvseries
+        'For Davao only
         SQL.ExecQueryDT("Select TOP 1 series from tblRelsHeader where docType = 50008 order by id desc")
+        'For All
+        'SQL.ExecQueryDT("Select TOP 1 series from tblRelsHeader where docType = 50008 order by id desc")
+
 
         ' Check for any exceptions during the SQL query execution
         If SQL.HasException(True) Then Exit Sub

@@ -1,12 +1,4 @@
-﻿
-Imports System.Data.SqlClient
-Imports System.Data
-Imports System.Data.SqlTypes
-Imports System.Data.OleDb
-Imports System
-Imports System.Windows.Forms
-
-Public Class addreasoncode
+﻿Public Class addreasoncode
     Private q As New qry
     Private Sub Addreasoncode_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cbvalue()

@@ -1,15 +1,15 @@
-﻿Imports System.Data
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 
 Public Class sqlcon
 
-    '----ivan local DB
+    'ivan local DB
+    'Public DBCon As New SqlConnection("Data Source=172.16.10.218;Initial Catalog=EMILS_tes;User ID=HSDPi;Password=123456$hsdp")
 
-    Public DBCon As New SqlConnection("Data Source=172.16.10.218;Initial Catalog=EMILS_tes;User ID=HSDPi;Password=123456$hsdp")
+    'MANILA DBC
+    'Public DBCon As New SqlConnection("Data Source=LAPTOP-QE84E12F;Initial Catalog=EvermoreDbmnl;Integrated Security=True")
 
-    ''EVERMORE DB
-
-    'Public DBCon As New SqlConnection("Data Source=172.16.7.7;Initial Catalog=EvermoreDB_GSC;User ID=HSDP_DEPOT;Password=123456$hsdp")
+    'DVO DBC
+    Public DBCon As New SqlConnection("Data Source=DESKTOP-AT16NDK;Initial Catalog=EvermoreDB_DVO;Persist Security Info=True;User ID=HSDP_DEPOT;Password=123456$hsdp")
 
     Public DBCmd As SqlCommand
 

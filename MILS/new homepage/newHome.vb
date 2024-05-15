@@ -1,6 +1,4 @@
-﻿Imports System.Runtime.Remoting.Contexts
-Imports System.Security
-Imports System.Net
+﻿Imports System.Net
 
 Public Class newHome
     Public userId As String
@@ -347,7 +345,7 @@ Public Class newHome
         Form1.ShowDialog()
     End Sub
 
-    Private Sub AccordionControlElement59_Click(sender As Object, e As EventArgs) 
+    Private Sub AccordionControlElement59_Click(sender As Object, e As EventArgs)
 
     End Sub
 

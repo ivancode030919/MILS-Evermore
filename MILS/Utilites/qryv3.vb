@@ -1,16 +1,4 @@
-﻿
-Imports System.Text.RegularExpressions
-Imports System.IO
-Imports System.Security.Cryptography
-Imports System.Text
-Imports System.Drawing.Image
-Imports System.Data.SqlClient
-Imports System.Data
-Imports System.Data.SqlTypes
-Imports System.Data.OleDb
-Imports System
-Imports System.Windows.Forms
-Imports CrystalDecisions.CrystalReports.Engine
+﻿Imports CrystalDecisions.CrystalReports.Engine
 Imports CrystalDecisions.Shared
 
 Public Class qryv3
