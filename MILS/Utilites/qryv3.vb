@@ -149,127 +149,127 @@ Public Class qryv3
         If SQL.HasException(True) Then Exit Sub
 
 
-        SQL.AddParam("@entryId", id)
-        SQL.ExecQueryDT("SELECT id,transId,goodId,areaId,locId,batchId,qty,COALESCE(Expirationdate, 'N/A') AS Expirationdate FROM tblRecvDetails
-                         wHERE transId = @entryId")
-        If SQL.HasException(True) Then Exit Sub
+        'SQL.AddParam("@entryId", id)
+        'SQL.ExecQueryDT("SELECT id,transId,goodId,areaId,locId,batchId,qty,COALESCE(Expirationdate, 'N/A') AS Expirationdate FROM tblRecvDetails
+        '                 wHERE transId = @entryId")
+        'If SQL.HasException(True) Then Exit Sub
 
-        If SQL.RecordCountDT <> 0 Then
-            For Each r As DataRow In SQL.DBDT.Rows
-                goodId = r("goodId")
-                batchId = r("batchId")
-                locId = r("locId")
-                qty = r("qty")
-                xdate = r("Expirationdate")
+        'If SQL.RecordCountDT <> 0 Then
+        '    For Each r As DataRow In SQL.DBDT.Rows
+        '        goodId = r("goodId")
+        '        batchId = r("batchId")
+        '        locId = r("locId")
+        '        qty = r("qty")
+        '        xdate = r("Expirationdate")
 
-                SQL.AddParam("@gId", goodId)
-                SQL.AddParam("@bId", batchId)
-                SQL.AddParam("@lId", locId)
-                SQL.AddParam("@exdate", xdate)
+        '        SQL.AddParam("@gId", goodId)
+        '        SQL.AddParam("@bId", batchId)
+        '        SQL.AddParam("@lId", locId)
+        '        SQL.AddParam("@exdate", xdate)
 
-                SQL.ExecQueryDT("SELECT * FROM tblProducts
-                                            WHERE goodId = @gId
-                                            AND batchId = @bId
-                                            AND locationId = @lId                        
-                                            AND Expirationdate = @exdate")
+        '        SQL.ExecQueryDT("SELECT * FROM tblProducts
+        '                                    WHERE goodId = @gId
+        '                                    AND batchId = @bId
+        '                                    AND locationId = @lId                        
+        '                                    AND Expirationdate = @exdate")
 
-                If SQL.HasException(True) Then Exit Sub
+        '        If SQL.HasException(True) Then Exit Sub
 
-                If SQL.RecordCountDT > 0 Then
-                    SQL.AddParam("@gId", goodId)
-                    SQL.AddParam("@bId", batchId)
-                    SQL.AddParam("@lId", locId)
-                    SQL.AddParam("@qty", qty)
-                    SQL.AddParam("@exdate", xdate)
+        '        If SQL.RecordCountDT > 0 Then
+        '            SQL.AddParam("@gId", goodId)
+        '            SQL.AddParam("@bId", batchId)
+        '            SQL.AddParam("@lId", locId)
+        '            SQL.AddParam("@qty", qty)
+        '            SQL.AddParam("@exdate", xdate)
 
-                    SQL.ExecQueryDT("UPDATE tblProducts
-                        set qty = qty - @qty
-                        WHERE goodId = @gId
-                        AND batchId = @bId
-                        AND locationId = @lId
-                        AND Expirationdate = @exdate")
-                    If SQL.HasException(True) Then Exit Sub
-                End If
+        '            SQL.ExecQueryDT("UPDATE tblProducts
+        '                set qty = qty - @qty
+        '                WHERE goodId = @gId
+        '                AND batchId = @bId
+        '                AND locationId = @lId
+        '                AND Expirationdate = @exdate")
+        '            If SQL.HasException(True) Then Exit Sub
+        '        End If
 
-            Next
-
-
-        End If
+        '    Next
 
 
-
-        With recvListingDetails.dg1
-            For i As Integer = 0 To .Rows.Count - 1
-                SQL.AddParam("@id", .Rows(i).Cells(0).Value.ToString)
-                SQL.AddParam("@gId", .Rows(i).Cells(1).Value.ToString)
-                SQL.AddParam("@loc", .Rows(i).Cells(7).Value.ToString)
-                SQL.AddParam("@batch", .Rows(i).Cells(8).Value.ToString)
-                SQL.AddParam("@qty", .Rows(i).Cells(5).Value.ToString)
-                SQL.AddParam("@exdate", .Rows(i).Cells(6).Value.ToString)
-
-                SQL.ExecQueryDT("UPDATE tblRecvDetails SET goodId=@gId, locId=@loc,batchId=@batch, qty=@qty, Expirationdate=@exdate WHERE id=@id")
-
-                If SQL.HasException(True) Then
-                    Exit Sub
-                End If
-            Next
-        End With
+        'End If
 
 
-        SQL.AddParam("@entryId", id)
-        SQL.ExecQueryDT("SELECT * FROM tblRecvDetails
-                        WHERE transId = @entryId;")
-        If SQL.HasException(True) Then Exit Sub
 
-        If SQL.RecordCountDT <> 0 Then
-            For Each r As DataRow In SQL.DBDT.Rows
-                goodId = r("goodId")
-                batchId = r("batchId")
-                locId = r("locId")
-                qty = r("qty")
-                xdate = r("Expirationdate")
-                areaId = r("areaId")
-                SQL.AddParam("@gId", goodId)
-                SQL.AddParam("@bId", batchId)
-                SQL.AddParam("@lId", locId)
-                SQL.AddParam("@qty", qty)
-                SQL.AddParam("@exdate", xdate)
+        'With recvListingDetails.dg1
+        '    For i As Integer = 0 To .Rows.Count - 1
+        '        SQL.AddParam("@id", .Rows(i).Cells(0).Value.ToString)
+        '        SQL.AddParam("@gId", .Rows(i).Cells(1).Value.ToString)
+        '        SQL.AddParam("@loc", .Rows(i).Cells(7).Value.ToString)
+        '        SQL.AddParam("@batch", .Rows(i).Cells(8).Value.ToString)
+        '        SQL.AddParam("@qty", .Rows(i).Cells(5).Value.ToString)
+        '        SQL.AddParam("@exdate", .Rows(i).Cells(6).Value.ToString)
 
-                SQL.ExecQueryDT("SELECT * FROM tblProducts
-                                    WHERE goodId = @gId
-                                    AND batchId = @bId
-                                    AND locationId = @lId
-                                    AND Expirationdate = @exdate")
-                If SQL.HasException(True) Then Exit Sub
-                If SQL.RecordCountDT > 0 Then
-                    SQL.AddParam("@gId", goodId)
-                    SQL.AddParam("@bId", batchId)
-                    SQL.AddParam("@lId", locId)
-                    SQL.AddParam("@qty", qty)
-                    SQL.AddParam("@exdate", xdate)
+        '        SQL.ExecQueryDT("UPDATE tblRecvDetails SET goodId=@gId, locId=@loc,batchId=@batch, qty=@qty, Expirationdate=@exdate WHERE id=@id")
 
-                    SQL.ExecQueryDT("UPDATE tblProducts
-                               set qty = qty + @qty
-                                WHERE goodId = @gId
-                                AND batchId = @bId
-                                AND locationId = @lId
-                                AND Expirationdate = @exdate")
-                    If SQL.HasException(True) Then Exit Sub
-                Else
-                    SQL.AddParam("@gId", goodId)
-                    SQL.AddParam("@bId", batchId)
-                    SQL.AddParam("@aId", areaId)
-                    SQL.AddParam("@lId", locId)
-                    SQL.AddParam("@qty", qty)
-                    SQL.AddParam("@exdate", xdate)
-                    SQL.ExecQueryDT("INSERT INTO tblProducts
-								(goodId,areaId,batchId,locationId,qty,Expirationdate)
-								VALUES
-								(@gId,@aId,@bId,@lId,@qty,@exdate);")
-                    If SQL.HasException(True) Then Exit Sub
-                End If
-            Next
-        End If
+        '        If SQL.HasException(True) Then
+        '            Exit Sub
+        '        End If
+        '    Next
+        'End With
+
+
+        'SQL.AddParam("@entryId", id)
+        'SQL.ExecQueryDT("SELECT * FROM tblRecvDetails
+        '                WHERE transId = @entryId;")
+        'If SQL.HasException(True) Then Exit Sub
+
+        'If SQL.RecordCountDT <> 0 Then
+        '    For Each r As DataRow In SQL.DBDT.Rows
+        '        goodId = r("goodId")
+        '        batchId = r("batchId")
+        '        locId = r("locId")
+        '        qty = r("qty")
+        '        xdate = r("Expirationdate")
+        '        areaId = r("areaId")
+        '        SQL.AddParam("@gId", goodId)
+        '        SQL.AddParam("@bId", batchId)
+        '        SQL.AddParam("@lId", locId)
+        '        SQL.AddParam("@qty", qty)
+        '        SQL.AddParam("@exdate", xdate)
+
+        '        SQL.ExecQueryDT("SELECT * FROM tblProducts
+        '                            WHERE goodId = @gId
+        '                            AND batchId = @bId
+        '                            AND locationId = @lId
+        '                            AND Expirationdate = @exdate")
+        '        If SQL.HasException(True) Then Exit Sub
+        '        If SQL.RecordCountDT > 0 Then
+        '            SQL.AddParam("@gId", goodId)
+        '            SQL.AddParam("@bId", batchId)
+        '            SQL.AddParam("@lId", locId)
+        '            SQL.AddParam("@qty", qty)
+        '            SQL.AddParam("@exdate", xdate)
+
+        '            SQL.ExecQueryDT("UPDATE tblProducts
+        '                       set qty = qty + @qty
+        '                        WHERE goodId = @gId
+        '                        AND batchId = @bId
+        '                        AND locationId = @lId
+        '                        AND Expirationdate = @exdate")
+        '            If SQL.HasException(True) Then Exit Sub
+        '        Else
+        '            SQL.AddParam("@gId", goodId)
+        '            SQL.AddParam("@bId", batchId)
+        '            SQL.AddParam("@aId", areaId)
+        '            SQL.AddParam("@lId", locId)
+        '            SQL.AddParam("@qty", qty)
+        '            SQL.AddParam("@exdate", xdate)
+        '            SQL.ExecQueryDT("INSERT INTO tblProducts
+        '(goodId,areaId,batchId,locationId,qty,Expirationdate)
+        'VALUES
+        '(@gId,@aId,@bId,@lId,@qty,@exdate);")
+        '            If SQL.HasException(True) Then Exit Sub
+        '        End If
+        '    Next
+        'End If
         MessageBox.Show("Successfully Updated...")
 
     End Sub
@@ -460,115 +460,115 @@ Public Class qryv3
 
 
 
-        '-----------------------------------------
-        'Select Data From Release Details
-        '-----------------------------------------
-        SQL.AddParam("@entryId", id)
-        SQL.ExecQueryDT("SELECT pId,goodId,areaId,locId,batchId,qty,COALESCE(Expirationdate, 'N/A') AS Expirationdate FROM tblRelsDetails
-                         wHERE transId = @entryId")
+        ''-----------------------------------------
+        ''Select Data From Release Details
+        ''-----------------------------------------
+        'SQL.AddParam("@entryId", id)
+        'SQL.ExecQueryDT("SELECT pId,goodId,areaId,locId,batchId,qty,COALESCE(Expirationdate, 'N/A') AS Expirationdate FROM tblRelsDetails
+        '                 wHERE transId = @entryId")
 
-        If SQL.HasException(True) Then Exit Sub
+        'If SQL.HasException(True) Then Exit Sub
 
-        If SQL.RecordCountDT <> 0 Then
-            For Each r As DataRow In SQL.DBDT.Rows
-                pld = r("pId")
-                goodId = r("goodId")
-                batchId = r("batchId")
-                locId = r("locId")
-                qty = r("qty")
-                xdate = r("Expirationdate")
+        'If SQL.RecordCountDT <> 0 Then
+        '    For Each r As DataRow In SQL.DBDT.Rows
+        '        pld = r("pId")
+        '        goodId = r("goodId")
+        '        batchId = r("batchId")
+        '        locId = r("locId")
+        '        qty = r("qty")
+        '        xdate = r("Expirationdate")
 
-                SQL.AddParam("@pId", pld)
-                SQL.AddParam("@gId", goodId)
-                SQL.AddParam("@bId", batchId)
-                SQL.AddParam("@lId", locId)
-                SQL.AddParam("@exdate", xdate)
+        '        SQL.AddParam("@pId", pld)
+        '        SQL.AddParam("@gId", goodId)
+        '        SQL.AddParam("@bId", batchId)
+        '        SQL.AddParam("@lId", locId)
+        '        SQL.AddParam("@exdate", xdate)
 
-                SQL.ExecQueryDT("SELECT * FROM tblProducts
-                                            WHERE id = @pId
-                                            AND goodId = @gId
-                                            AND batchId = @bId
-                                            AND locationId = @lId                        
-                                            AND Expirationdate = @exdate")
-                If SQL.HasException(True) Then Exit Sub
+        '        SQL.ExecQueryDT("SELECT * FROM tblProducts
+        '                                    WHERE id = @pId
+        '                                    AND goodId = @gId
+        '                                    AND batchId = @bId
+        '                                    AND locationId = @lId                        
+        '                                    AND Expirationdate = @exdate")
+        '        If SQL.HasException(True) Then Exit Sub
 
 
-                If SQL.RecordCountDT <> 0 Then
+        '        If SQL.RecordCountDT <> 0 Then
 
-                    SQL.AddParam("@pId", pld)
-                    SQL.AddParam("@gId", goodId)
-                    SQL.AddParam("@bId", batchId)
-                    SQL.AddParam("@lId", locId)
-                    SQL.AddParam("@qty", qty)
-                    SQL.AddParam("@exdate", xdate)
+        '            SQL.AddParam("@pId", pld)
+        '            SQL.AddParam("@gId", goodId)
+        '            SQL.AddParam("@bId", batchId)
+        '            SQL.AddParam("@lId", locId)
+        '            SQL.AddParam("@qty", qty)
+        '            SQL.AddParam("@exdate", xdate)
 
-                    SQL.ExecQueryDT("UPDATE tblProducts
-                set qty = qty + @qty
-                WHERE id = @pId
-                AND goodId = @gId
-                AND batchId = @bId
-                AND locationId = @lId
-                AND Expirationdate = @exdate")
+        '            SQL.ExecQueryDT("UPDATE tblProducts
+        '        set qty = qty + @qty
+        '        WHERE id = @pId
+        '        AND goodId = @gId
+        '        AND batchId = @bId
+        '        AND locationId = @lId
+        '        AND Expirationdate = @exdate")
 
-                    If SQL.HasException(True) Then Exit Sub
-                End If
+        '            If SQL.HasException(True) Then Exit Sub
+        '        End If
 
-            Next
+        '    Next
 
-        End If
+        'End If
 
 
         '-----------------------------------------
         'insert new data
         '-----------------------------------------
-        batchIdsss()
-        locidsss()
-        With releaseDetails.dg1
+        'batchIdsss()
+        'locidsss()
+        'With releaseDetails.dg1
 
 
-            Dim loc As Integer = releaseDetails.loc
-            Dim Bat As Integer = releaseDetails.batch
-            Dim Area As Integer = releaseDetails.area
-            For i As Integer = 0 To .Rows.Count - 1
-                SQL.AddParam("@transId", id)
-                SQL.AddParam("@id", .Rows(i).Cells(0).Value.ToString)
-                SQL.AddParam("@gId", .Rows(i).Cells(1).Value.ToString)
-                SQL.AddParam("@loc", .Rows(i).Cells(8).Value.ToString)
-                SQL.AddParam("@batch", .Rows(i).Cells(9).Value.ToString)
-                SQL.AddParam("@area", Area)
-                SQL.AddParam("@qty", .Rows(i).Cells(5).Value.ToString)
-                SQL.AddParam("@exdate", .Rows(i).Cells(6).Value.ToString)
-                SQL.AddParam("@pId", .Rows(i).Cells(7).Value.ToString)
+        '    Dim loc As Integer = releaseDetails.loc
+        '    Dim Bat As Integer = releaseDetails.batch
+        '    Dim Area As Integer = releaseDetails.area
+        '    For i As Integer = 0 To .Rows.Count - 1
+        '        SQL.AddParam("@transId", id)
+        '        SQL.AddParam("@id", .Rows(i).Cells(0).Value.ToString)
+        '        SQL.AddParam("@gId", .Rows(i).Cells(1).Value.ToString)
+        '        SQL.AddParam("@loc", .Rows(i).Cells(8).Value.ToString)
+        '        SQL.AddParam("@batch", .Rows(i).Cells(9).Value.ToString)
+        '        SQL.AddParam("@area", Area)
+        '        SQL.AddParam("@qty", .Rows(i).Cells(5).Value.ToString)
+        '        SQL.AddParam("@exdate", .Rows(i).Cells(6).Value.ToString)
+        '        SQL.AddParam("@pId", .Rows(i).Cells(7).Value.ToString)
 
-                SQL.ExecQueryDT("UPDATE tblRelsDetails SET pId=@pId, goodId=@gId,areaId=@area, locId=@loc,batchId=@batch, qty=@qty, Expirationdate=@exdate WHERE id=@id")
-                If SQL.HasException(True) Then Exit Sub
-
-
-            Next
-        End With
+        '        SQL.ExecQueryDT("UPDATE tblRelsDetails SET pId=@pId, goodId=@gId,areaId=@area, locId=@loc,batchId=@batch, qty=@qty, Expirationdate=@exdate WHERE id=@id")
+        '        If SQL.HasException(True) Then Exit Sub
 
 
+        '    Next
+        'End With
 
 
-        SQL.AddParam("@entryId", id)
-        SQL.ExecQueryDT("SELECT * FROM tblRelsDetails
-        WHERE transId = @entryId;")
-        If SQL.HasException(True) Then Exit Sub
-        Dim pId As String
-        If SQL.RecordCountDT <> 0 Then
-            For Each r As DataRow In SQL.DBDT.Rows
-                pId = r("pId")
-                qty = r("qty")
 
-                SQL.AddParam("@pId", pId)
-                SQL.AddParam("@qty", qty)
 
-                SQL.ExecQueryDT("UPDATE tblProducts
-                                SET qty = qty - @qty
-                                WHERE id = @pId;")
-                If SQL.HasException(True) Then Exit Sub
-            Next
-        End If
+        'SQL.AddParam("@entryId", id)
+        'SQL.ExecQueryDT("SELECT * FROM tblRelsDetails
+        'WHERE transId = @entryId;")
+        'If SQL.HasException(True) Then Exit Sub
+        'Dim pId As String
+        'If SQL.RecordCountDT <> 0 Then
+        '    For Each r As DataRow In SQL.DBDT.Rows
+        '        pId = r("pId")
+        '        qty = r("qty")
+
+        '        SQL.AddParam("@pId", pId)
+        '        SQL.AddParam("@qty", qty)
+
+        '        SQL.ExecQueryDT("UPDATE tblProducts
+        '                        SET qty = qty - @qty
+        '                        WHERE id = @pId;")
+        '        If SQL.HasException(True) Then Exit Sub
+        '    Next
+        'End If
         MessageBox.Show("Successfully Updated...")
     End Sub
 
