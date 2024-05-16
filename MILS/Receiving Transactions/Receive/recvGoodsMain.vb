@@ -322,14 +322,14 @@ Public Class recvGoodsMain
     End Sub
 
     Private Sub dgvRecv_Click(sender As Object, e As EventArgs) Handles dgvRecv.Click
-        If dgvRecv.Rows.Count = 0 Then
-            lblErr.Visible = True
-            lblErr.ForeColor = Color.Red
-            lblErr.Text = "Please select valid data..."
-        Else
+        'If dgvRecv.Rows.Count = 0 Then
+        '    lblErr.Visible = True
+        '    lblErr.ForeColor = Color.Red
+        '    lblErr.Text = "Please select valid data..."
+        'Else
 
-            slctedRow = dgvRecv.CurrentCell.RowIndex
-        End If
+        '    slctedRow = dgvRecv.CurrentCell.RowIndex
+        'End If
     End Sub
 
     Private Sub dgvRecv_KeyDown(sender As Object, e As KeyEventArgs) Handles dgvRecv.KeyDown

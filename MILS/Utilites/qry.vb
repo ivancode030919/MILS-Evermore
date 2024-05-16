@@ -5,8 +5,12 @@ Public Class qry
     Public SQL As New sqlcon
     Private f As New functions
 
-    'Public path As String = "\\172.16.7.7\MILS_v3\EVERMORE\Live\Evermore\MILS\"
-    Public path As String = "C:\Mils_evermore\Evermore\Evermore-DVO\MILS\"
+    'GSC PATH
+    Public path As String = "\\172.16.7.7\MILS_v3\EVERMORE\Live\Evermore\MILS\"
+
+    'DAVAO path
+    'Public path As String = "C:\Mils_evermore\Evermore\Evermore-DVO\MILS\"
+
     Public Sub reportlog()
         Dim RPuser1 As String = "HSDP_DEPOT"
         Dim RPpass2 As String = "123456$hsdp"
@@ -8139,7 +8143,7 @@ FROM tblProductsABHeaders T1
     'fetch series for Document Number in Releasing : Goods Receipt Form : For Company expense
     Public Sub FetchSeriesinReleasingCE()
         'For Davao
-        SQL.ExecQueryDT("Select TOP 1 series from tblRelsHeader where docType = 52007 order by id desc")
+        SQL.ExecQueryDT("Select TOP 1 series from tblRelsHeader where docType = 52007 and receiver = 10007 order by id desc")
 
         'For All
         'SQL.ExecQueryDT("Select TOP 1 series from tblRelsHeader where docType = 50027 order by id desc")
@@ -8184,7 +8188,7 @@ FROM tblProductsABHeaders T1
     Public Sub FetchSeriesinReleasing1()
         ' Execute the SQL query to retrieve the top series from tblrecvseries
         'For Davao only
-        SQL.ExecQueryDT("Select TOP 1 series from tblRelsHeader where docType = 50008 order by id desc")
+        SQL.ExecQueryDT("Select TOP 1 series from tblRelsHeader where docType = 50008 and receiver = 10006 order by id desc")
         'For All
         'SQL.ExecQueryDT("Select TOP 1 series from tblRelsHeader where docType = 50008 order by id desc")
 
@@ -8228,7 +8232,7 @@ FROM tblProductsABHeaders T1
     'fetch series for Document Number in Releasing : Delivery Receipt
     Public Sub FetchSeriesinReleasing2()
         ' Execute the SQL query to retrieve the top series from tblrecvseries
-        SQL.ExecQueryDT("Select TOP 1 series from tblRelsHeader where docType = 50002 order by id desc")
+        SQL.ExecQueryDT("Select TOP 1 series from tblRelsHeader where docType = 50002 and receiver= 10008  order by id desc")
 
         ' Check for any exceptions during the SQL query execution
         If SQL.HasException(True) Then Exit Sub
