@@ -108,7 +108,6 @@
             ComboBox1.SelectedIndex = -1
             tbxDocnum.Text = ""
             q.fetchUserLogInAdjustInventory(newHome.userId)
-            dtpDate.Value = Date.Now
             btnSave.Text = "Record"
             Me.Refresh()
             RadioButton1.Checked = True
@@ -129,7 +128,6 @@
         ComboBox1.SelectedIndex = -1
         tbxDocnum.Text = ""
         q.fetchUserLogInAdjustInventory(newHome.userId)
-        dtpDate.Value = Date.Now
         btnSave.Text = "Record"
         Me.Refresh()
         RadioButton1.Checked = True

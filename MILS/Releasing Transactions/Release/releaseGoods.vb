@@ -39,12 +39,8 @@ Public Class releaseGoods
     End Sub
 
     Sub newDGVFormat()
-
-
         With dgvRels
-
             .AllowUserToAddRows = True
-
             .ColumnHeadersHeight = 45
             .RowTemplate.Height = 35
 
@@ -438,9 +434,11 @@ Public Class releaseGoods
             tbxDocNum.Enabled = False
         Else
 
+            ComboBox1.DropDownStyle = ComboBoxStyle.Simple
             Label9.Text = "Remarks :"
             tbxDocNum.Enabled = True
             tbxDocNum.Text = ""
+
         End If
         q.fetchIdDocTypeRels(tbxDocType.Text)
     End Sub

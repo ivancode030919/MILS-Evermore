@@ -11,13 +11,7 @@
         Else
             n.UpdateTilesSetup(id, TextBox2.Text, TextBox3.Text)
         End If
-
-
-
-
     End Sub
-
-
 
     Private Sub TextBox2_Click(sender As Object, e As EventArgs) Handles TextBox2.Click
         TextBox2.Text = ""
@@ -31,4 +25,5 @@
         TextBox3.Text = ""
         TextBox2.Text = ""
     End Sub
+
 End Class

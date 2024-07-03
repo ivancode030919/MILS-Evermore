@@ -133,12 +133,12 @@ Public Class qryv3
 
 
 
-        Dim goodId As String = ""
-        Dim batchId As String = ""
-        Dim locId As String = ""
-        Dim areaId As String = ""
-        Dim qty As Double
-        Dim xdate As String = ""
+        'Dim goodId As String = ""
+        'Dim batchId As String = ""
+        'Dim locId As String = ""
+        'Dim areaId As String = ""
+        'Dim qty As Double
+        'Dim xdate As String = ""
 
 
 
@@ -442,13 +442,13 @@ Public Class qryv3
         SQL.AddParam("@receiver", t7)
         SQL.AddParam("@docReftype", t8)
 
-        Dim pld As String = ""
-        Dim goodId As String = ""
-        Dim batchId As String = ""
-        Dim locId As String = ""
-        Dim areaId As String = ""
-        Dim qty As Double
-        Dim xdate As String = ""
+        'Dim pld As String = ""
+        'Dim goodId As String = ""
+        'Dim batchId As String = ""
+        'Dim locId As String = ""
+        'Dim areaId As String = ""
+        'Dim qty As Double
+        'Dim xdate As String = ""
 
         '-----------------------------------------
         'update release header
